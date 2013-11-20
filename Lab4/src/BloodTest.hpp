@@ -46,13 +46,13 @@ public:
 };
 
 //This class is inherited from the BloodTest Class, and it contains all the variables and functions needed for a BloodGlucose test.
-//A Blood Glucose test has is a type of Blood test.
+//A Blood Glucose test is a type of Blood test.
 class BloodGlucose: public BloodTest{
 protected:
 	float results;
 public:
 	BloodGlucose();
-	string bloodGlucoseResults();
+	void bloodGlucoseResults();
 };
 
 class Lipoprotein: public BloodTest{

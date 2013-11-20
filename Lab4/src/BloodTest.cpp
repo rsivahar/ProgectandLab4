@@ -11,26 +11,22 @@ using namespace std;
 BloodTest::BloodTest() {
 	// TODO Auto-generated constructor stub
 	cout << "Enter patient's name:" <<endl;
-	cin >> name; cout <<endl;
-
+	cin >> name;
 	cout << "Enter patient's blood type:" <<endl;
-	cin >> bloodType; cout <<endl;
-
+	cin >> bloodType;
 	cout << "Enter patient's gender:" <<endl;
-	cin >> gender; cout <<endl;
+	cin >> gender;
 }
 
 void BloodTest::annotation(){
 	string member, ID, annotation;
 
 	cout << "Hospital Member:" << endl;
-	cin >> member; cout <<endl;
-
+	cin >> member;
 	cout << "ID:" <<endl;
-	cin >> ID; cout <<endl;
-
+	cin >> ID;
 	cout << "Comments:" << endl;
-	cin >> annotation; cout <<endl;
+	cin >> annotation;
 }
 
 BloodCount::BloodCount(){
@@ -65,23 +61,23 @@ BloodGlucose::BloodGlucose(){
 	results =0;
 }
 
-string BloodGlucose::bloodGlucoseResults(){
-	string condition;
+void BloodGlucose::bloodGlucoseResults(){
 
 	cout << "Please enter the plasma glucose results acquired from the test:" <<endl;
 	cin >> results;
 
 	if (results>=70 && results<=99){
-		condition = "Normal";
+		cout << "Normal";
 	}
 	if (results>=100 && results<=125){
-			condition = "Prediabetes";
+			cout << "Prediabetes";
 	}
 	if (results>=126){
-			condition = "Diabetes";
+			cout <<"Diabetes";
 	}
-
-	return condition;
+	else {
+		cout <<"Invalid Value";
+	}
 }
 
 Lipoprotein::Lipoprotein(){
