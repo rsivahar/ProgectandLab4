@@ -50,10 +50,9 @@ public:
 class BloodGlucose: public BloodTest{
 protected:
 	float results;
-
 public:
 	BloodGlucose();
-	void bloodGlucoseResults();
+	string bloodGlucoseResults();
 };
 
 class Lipoprotein: public BloodTest{
