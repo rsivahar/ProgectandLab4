@@ -9,13 +9,12 @@
 using namespace std;
 
 BloodTest::BloodTest() {
-	// TODO Auto-generated constructor stub
-	cout << "Enter patient's name:" <<endl;
+	/*cout << "Enter patient's full name:" <<endl;
 	cin >> name;
 	cout << "Enter patient's blood type:" <<endl;
 	cin >> bloodType;
 	cout << "Enter patient's gender:" <<endl;
-	cin >> gender;
+	cin >> gender;*/
 }
 
 void BloodTest::annotation(){
@@ -37,7 +36,8 @@ BloodCount::BloodCount(){
 	hematocrit =0;
 	volume=0;
 }
-void BloodCount::bloodTestResults(){
+
+void BloodCount::bloodCountResults(){
 	cout << "Please enter the total red blood cell count acquired from the test:" <<endl;
 	cin >> redbloodcells;
 
@@ -66,19 +66,20 @@ void BloodGlucose::bloodGlucoseResults(){
 	cout << "Please enter the plasma glucose results acquired from the test:" <<endl;
 	cin >> results;
 
+	while(results<70 ||results>127){
+		cout << "Invalid value, please enter another value!"<<endl;
+		cin >> results;
+	}
 	if (results>=70 && results<=99){
-		cout << "Normal";
+		cout << "Blood Glucose is: NORMAL" <<endl;
 	}
-	if (results>=100 && results<=125){
-			cout << "Prediabetes";
+	else if (results>=100 && results<=125){
+			cout << "Blood Glucose is: PREDIABETES" <<endl;
 	}
-	if (results>=126){
-			cout <<"Diabetes";
+	else if (results>=126){
+			cout <<"Blood Glucose is: DIABETES"<<endl;
 	}
-	else {
-		cout <<"Invalid Value";
 	}
-}
 
 Lipoprotein::Lipoprotein(){
 	totalCholesterol = 0;
@@ -87,8 +88,6 @@ Lipoprotein::Lipoprotein(){
 }
 
 void Lipoprotein::lipoproteinResults(){
-
-
 cout << "Please enter the total cholesterol level acquired from the test:" <<endl;
 cin >> totalCholesterol;
 
@@ -96,12 +95,12 @@ cin >> totalCholesterol;
 		cout << "The total cholesterol level is: DESIRABLE" <<endl;
 	}
 
-	if (totalCholesterol >=200 && totalCholesterol <=239){
+	else if (totalCholesterol >=200 && totalCholesterol <=239){
 		cout << "The total cholesterol level is: BOREDERLINE HIGH" <<endl;
 	}
 
-	if (totalCholesterol >=240){
-		cout << "The total cholesterol level is: HIGH" <<endl;
+	else if (totalCholesterol >=240){
+			cout << "The total cholesterol level is: HIGH" <<endl;
 	}
 
 cout << "Please enter the HDL cholesterol level acquired from the test:" <<endl;
@@ -141,5 +140,7 @@ cin >> ldl;
 	}
 
 }
+
+
 
 

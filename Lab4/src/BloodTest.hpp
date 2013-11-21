@@ -28,8 +28,7 @@ public:
 	void annotation();
 };
 
-//This class is inherited from the BloodTest Class, and it contains all the variables and functions needed for a Blood Count test.
-//A Blood Count test has various components of blood, and it is a type of Blood test.
+//This class is inherited from the BloodTest Class, and it contains all the variables and functions needed for a Blood Count test. A Blood Count test has various components of blood, and it is a type of Blood test.
 class BloodCount: public BloodTest{
 	//These are the protected member variables of the class BloodCount. They will be used by the functions in this class.
 protected:
@@ -42,11 +41,10 @@ protected:
 
 public:
 	BloodCount();
-	void bloodTestResults();
+	void bloodCountResults();
 };
 
-//This class is inherited from the BloodTest Class, and it contains all the variables and functions needed for a BloodGlucose test.
-//A Blood Glucose test is a type of Blood test.
+//This class is inherited from the BloodTest Class, and it contains all the variables and functions needed for a BloodGlucose test. A Blood Glucose test is a type of Blood test.
 class BloodGlucose: public BloodTest{
 protected:
 	float results;
