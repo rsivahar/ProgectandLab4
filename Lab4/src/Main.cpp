@@ -1,39 +1,84 @@
-/*
- * Main.cpp
- *
- *  Created on: Nov 20, 2013
- *      Author: rsivahar
- */
+//============================================================================
+// Name        : Lab4.cpp
+// Author      : Rathai
+// Version     :
+// Copyright   : Your copyright notice
+// Description : Hello World in C++, Ansi-style
+//============================================================================
+
 #include <iostream>
+using namespace std;
 #include "BloodTest.hpp"
 
-using namespace std;
+int main() {
 
-int main()
-{
-
-string name, gender, bloodtype;
-
-cout << "Please enter full name of patient:" <<endl;
-cin >> name;
-
-cout << "Enter the gender of patient:" <<endl;
-cin >> gender;
-
-cout << "Enter blood type of patient:" <<endl;
-cin >> bloodtype;
-
+string name, bloodType;
+int choice, testchoice, displaychoice;
 BloodCount test;
-test.bloodCountResults();
-test.annotation();
-
 BloodGlucose test1;
-test1.bloodGlucoseResults();
-test1.annotation();
+Lipoprotein test2;
 
+cout << "Electronic Chart Management System" <<endl;
+cout <<"--------------------------------------" <<endl;
+cout << "Please enter the patient's data" <<endl;
+cout << "Enter patient's name:" <<endl;
+cin >> name;
+cout << "Enter patient's blood type:" <<endl;
+cin >> bloodType;
 
-return 0;
+while(1){
+	cout << "Please choose from the following options" <<endl;
+	cout << "To add a test\t\t\t\t\t1"<<endl;
+	cout << "To add an annotation\t\t\t\t2"<<endl;
+	cout << "To generate the reports\t\t\t\t3" <<endl;
+	cin >> choice;
+
+	switch(choice){
+	case 1:
+		cout << "What type of test would you like to add:" <<endl;
+		cout << "Blood Count Test\t\t\t\t1" <<endl;
+		cout << "Blood Glucose Test\t\t\t\t2" <<endl;
+		cout << "Lipoprotein Test\t\t\t\t3" <<endl;
+		cin >>testchoice;
+
+		if (testchoice == 1){
+			test.bloodTestResults();
+			test.annotation();
+		}
+
+		else if (testchoice == 2){
+			test1.bloodGlucoseResults();
+			test1.annotation();
+		}
+
+		else if (testchoice == 3){
+			test2.lipoproteinResults();
+			test2.annotation();
+		}
+		break;
+
+	case 2:
+		break;
+
+	case 3:
+		cout << "Which test would you like to display:" <<endl;
+		cout << "Blood Count Test\t\t\t\t1" <<endl;
+		cout << "Blood Glucose Test\t\t\t\t2" <<endl;
+		cout << "Lipoprotein Test\t\t\t\t3" <<endl;
+		cin >>displaychoice;
+
+		if(displaychoice==1){
+			test.bloodCountDisplay();
+		}
+
+		else if(displaychoice==2){
+			test1.bloodGlucoseDisplay();
+		}
+
+		else if(displaychoice==3){
+			test2.lipoproteinDisplay();
+		}
+		break;
+	}
 }
-
-
-
+}
