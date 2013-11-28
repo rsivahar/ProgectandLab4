@@ -7,18 +7,16 @@
  */
 #include <iostream>
 #include <stdlib.h>
+#include <fstream>
 #include "BloodTest.hpp"
 
 using namespace std;
 
+std::ofstream output("example.txt", std::ios_base::out|ios::app);
 BloodTest::BloodTest() {
 }
 
 void BloodTest::annotation(){
-	string member;
-	string ID;
-	string comment;
-
 	cout << "Hospital Member:" << endl;
 	cin >> member;
 
@@ -27,6 +25,7 @@ void BloodTest::annotation(){
 
 	cout << "Comments:" << endl;
 	cin >> comment;
+
 }
 
 BloodCount::BloodCount(){
@@ -158,15 +157,19 @@ else {
 }
 
 void BloodCount::bloodCountDisplay(){
-	cout << "----------------BLOOD COUNT TEST RESULTS----------------"<<endl;
-	cout << "Blood Component\t\tValue\t\tCondition" <<endl;
-	cout << "Red Blood Cells\t\t"<<redbloodcells<<"\t\t"<<rbcDisplay<<endl;
-	cout << "White Blood Cells\t"<<whitebloodcells<<"\t\t"<<wbcDisplay<<endl;
-	cout << "Platelets\t\t"<<platelets<<"\t\t"<<pDisplay<<endl;
-	cout << "Hemoglobin\t\t"<<hemoglobin<<"\t\t"<<hemoDisplay<<endl;
-	cout << "Hematocrit\t\t"<<hematocrit<<"\t\t"<<hDisplay<<endl;
-	cout << "Mean Corpuscular Volume\t"<<volume<<"\t\t"<<vDisplay<<endl;
-	cout << "--------------------------------------------------------"<<endl;
+	output << "---------------BLOOD COUNT TEST RESULTS---------------"<<endl;
+	output << "Blood Component\t\tValue\t\t\tCondition" <<endl;
+	output << "Red Blood Cells\t\t"<<redbloodcells<<"\t\t"<<rbcDisplay<<endl;
+	output << "White Blood Cells\t"<<whitebloodcells<<"\t\t"<<wbcDisplay<<endl;
+	output << "Platelets\t\t"<<platelets<<"\t\t"<<pDisplay<<endl;
+	output << "Hemoglobin\t\t"<<hemoglobin<<"\t\t"<<hemoDisplay<<endl;
+	output << "Hematocrit\t\t"<<hematocrit<<"\t\t"<<hDisplay<<endl;
+	output << "Mean Corpuscular Volume\t"<<volume<<"\t\t"<<vDisplay<<endl;
+	output <<"Hospital Member:" << member <<endl;
+	output << "ID:" << ID <<endl;
+	output << "Comment:" << comment <<endl;
+	output << "--------------------------------------------------------"<<endl;
+
 }
 
 BloodGlucose::BloodGlucose(){
@@ -199,10 +202,14 @@ return condition;
 }
 
 void BloodGlucose::bloodGlucoseDisplay(){
-	cout << "----------------BLOOD GLUCOSE TEST RESULTS----------------"<<endl;
-	cout <<"Blood Glucose Level\t\tCondition" <<endl;
-	cout << results << "\t\t\t\t"<<condition <<endl;
-	cout << "----------------------------------------------------------"<<endl;
+	output << "----------------BLOOD GLUCOSE TEST RESULTS----------------"<<endl;
+	output <<"Blood Glucose Level\t\tCondition" <<endl;
+	output << results << "\t\t\t\t"<<condition <<endl;
+	output << "----------------------------------------------------------"<<endl;
+	output <<"Hospital Member:" << member <<endl;
+	output << "ID:" << ID <<endl;
+	output << "Comment:" << comment <<endl;
+	output << "--------------------------------------------------------"<<endl;
 }
 
 Lipoprotein::Lipoprotein(){
@@ -271,10 +278,14 @@ if (ldl>=190){
 }
 
 void Lipoprotein::lipoproteinDisplay(){
-	cout << "--------------------- LIPOPROTEIN TEST RESULTS ---------------------" <<endl;
-	cout << "Lipoprotein\t\tValue\t\tCondition" <<endl;
-	cout << "Total Cholesterol\t"<<totalCholesterol<<"\t\t"<<totalDisplay<<endl;
-	cout << "HDL\t\t\t"<<hdl<<"\t\t"<<hdlDisplay<<endl;
-	cout << "LDL\t\t\t"<<ldl<<"\t\t"<<ldlDisplay<<endl;
-	cout << "---------------------------------------------- ---------------------" <<endl;
+	output << "--------------------- LIPOPROTEIN TEST RESULTS ---------------------" <<endl;
+	output << "Lipoprotein\t\tValue\t\tCondition" <<endl;
+	output << "Total Cholesterol\t"<<totalCholesterol<<"\t\t"<<totalDisplay<<endl;
+	output << "HDL\t\t\t"<<hdl<<"\t\t"<<hdlDisplay<<endl;
+	output << "LDL\t\t\t"<<ldl<<"\t\t"<<ldlDisplay<<endl;
+	output << "---------------------------------------------- ---------------------" <<endl;
+	output <<"Hospital Member:" << member <<endl;
+	output << "ID:" << ID <<endl;
+	output << "Comment:" << comment <<endl;
+	output << "--------------------------------------------------------"<<endl;
 }
