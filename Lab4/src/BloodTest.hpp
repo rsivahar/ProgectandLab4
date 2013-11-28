@@ -16,13 +16,13 @@ using namespace std;
 class BloodTest{
 protected:
 	string gender;
-
 public:
 	string member;
 	string ID;
 	string comment;
     BloodTest();
     void annotation();
+    void doctorsannotation();
 };
 
 class BloodCount: public BloodTest{

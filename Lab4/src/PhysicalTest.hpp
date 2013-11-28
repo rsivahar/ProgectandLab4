@@ -21,6 +21,7 @@ public:
 	string comment1;
     PhysicalTest();
     void annotation1();
+    void docannotation();
 };
 
 class VitalSigns : public PhysicalTest{

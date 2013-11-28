@@ -14,15 +14,14 @@ using namespace std;
 
 int main() {
 
-std::ofstream output2("example.txt", std::ios_base::out|ios::app);
+std::ofstream output2("PatientReport.txt", std::ios_base::out|ios::app);
+
 string name, bloodType;
-int choice, testchoice, displaychoice;
-BloodCount test;
-BloodGlucose test1;
-Lipoprotein test2;
-VitalSigns test3;
-UrineTest test4;
-UrineCulture test5;
+int choice, testchoice, displaychoice, docChoice;
+BloodCount test; BloodGlucose test1; Lipoprotein test2;
+VitalSigns test3; UrineTest test4; UrineCulture test5;
+char addcomment;
+
 
 cout << "Electronic Chart Management System" <<endl;
 cout <<"--------------------------------------" <<endl;
@@ -35,10 +34,11 @@ cin >> bloodType;
 output2 << "Patient's name: " << name << "\t\t";
 output2 << "Blood Type: " << bloodType << endl;
 
-while(1){
+while(int loop=1){
 	cout << "Please choose from the following options" <<endl;
 	cout << "To add a test\t\t\t\t\t1"<<endl;
-	cout << "To generate the reports\t\t\t\t2" <<endl;
+	cout << "To add an annotation\t\t\t\t2" <<endl;
+	cout << "To generate the reports\t\t\t\t3" <<endl;
 	cin >> choice;
 
 	switch(choice){
@@ -54,36 +54,108 @@ while(1){
 
 		if (testchoice == 1){
 			test.bloodTestResults();
-			test.annotation();
+			cout << "Enter Y/y to add an annotation to this report, or N/n to not add an annotation:" <<endl;
+			cin >> addcomment;
+			if (addcomment == 'Y' || addcomment == 'y'){
+				test.annotation();
+				cout << "Please generate this test result before allowing doctor to add annotation." <<endl;
+			}
+			else if (addcomment == 'N' || addcomment =='n'){
+				loop=1;
+				cout << "Please generate this test result before allowing doctor to add annotation." <<endl;
+			}
 		}
 
 		else if (testchoice == 2){
 			test1.bloodGlucoseResults();
-			test1.annotation();
+			cout << "Enter Y/y to add an annotation to this report, or N/n to not add an annotation:" <<endl;
+			cin >> addcomment;
+			if (addcomment == 'Y' || addcomment == 'y'){
+				test1.annotation();
+				cout << "Please generate this test result before allowing doctor to add annotation." <<endl;
+			}
+			else if (addcomment == 'N' || addcomment =='n'){
+				loop=1;
+				cout << "Please generate this test result before allowing doctor to add annotation." <<endl;
+			}
 		}
 
 		else if (testchoice == 3){
 			test2.lipoproteinResults();
-			test2.annotation();
+			cout << "Enter Y/y to add an annotation to this report, or N/n to not add an annotation:" <<endl;
+			cin >> addcomment;
+			if (addcomment == 'Y' || addcomment == 'y'){
+				test2.annotation();
+				cout << "Please generate this test result before allowing doctor to add annotation." <<endl;
+			}
+			else if (addcomment == 'N' || addcomment =='n'){
+				loop=1;
+				cout << "Please generate this test result before allowing doctor to add annotation." <<endl;
+			}
 		}
 
 		else if (testchoice == 4){
 			test3.vitalSignsTest();
-			test3.annotation1();
+			cout << "Enter Y/y to add an annotation to this report, or N/n to not add an annotation:" <<endl;
+			cin >> addcomment;
+			if (addcomment == 'Y' || addcomment == 'y'){
+				test3.annotation1();
+				cout << "Please generate this test result before allowing doctor to add annotation." <<endl;
+			}
+			else if (addcomment == 'N' || addcomment =='n'){
+				loop=1;
+				cout << "Please generate this test result before allowing doctor to add annotation." <<endl;
+			}
 		}
 
 		else if (testchoice == 5){
 			test4.urineTestResults();
-			test4.annotation1();
+			cout << "Enter Y/y to add an annotation to this report, or N/n to not add an annotation:" <<endl;
+			cin >> addcomment;
+			if (addcomment == 'Y' || addcomment == 'y'){
+				test4.annotation1();
+				cout << "Please generate this test result before allowing doctor to add annotation." <<endl;
+			}
+			else if (addcomment == 'N' || addcomment =='n'){
+				loop=1;
+				cout << "Please generate this test result before allowing doctor to add annotation." <<endl;
+			}
 		}
 
 		else if (testchoice == 6){
 			test5.cultureResults();
-			test5.annotation1();
+			cout << "Enter Y/y to add an annotation to this report, or N/n to not add an annotation:" <<endl;
+			cin >> addcomment;
+			if (addcomment == 'Y' || addcomment == 'y'){
+				test5.annotation1();
+				cout << "Please generate this test result before allowing doctor to add annotation." <<endl;
+			}
+			else if (addcomment == 'N' || addcomment =='n'){
+				loop=1;
+				cout << "Please generate this test result before allowing doctor to add annotation." <<endl;
+			}
 		}
 		break;
 
 	case 2:
+		cout << "*********************************************************" <<endl;
+		cout << "You must be a doctor to be able to add an annotation here." <<endl;
+		cout << "Please enter 1 if you are entering an annotation for Blood Tests" <<endl;
+		cout <<	"Please enter 2 if you are entering an annotation for Physical Tests:" <<endl;
+		cin >> docChoice;
+
+		if(docChoice==1){
+			BloodTest addAnnotation;
+			addAnnotation.doctorsannotation();
+		}
+
+		else if (docChoice ==2){
+			PhysicalTest addAnnotation1;
+			addAnnotation1.docannotation();
+		}
+		break;
+
+	case 3:
 		cout << "Which test would you like to display:" <<endl;
 		cout << "Blood Count Test\t\t\t\t1" <<endl;
 		cout << "Blood Glucose Test\t\t\t\t2" <<endl;

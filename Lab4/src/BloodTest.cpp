@@ -12,7 +12,7 @@
 
 using namespace std;
 
-std::ofstream output("example.txt", std::ios_base::out|ios::app);
+std::ofstream output("PatientReport.txt", std::ios_base::out|ios::app);
 BloodTest::BloodTest() {
 }
 
@@ -26,6 +26,16 @@ void BloodTest::annotation(){
 	cout << "Comments:" << endl;
 	cin >> comment;
 
+}
+
+void BloodTest::doctorsannotation(){
+	string doctor, doctorscomment;
+
+	cout << "Please enter your name" <<endl;
+	cin >> doctor;
+	cout << "Please enter your comment:" <<endl;
+	cin >> doctorscomment;
+	output << "Name: " <<doctor <<"\t\t\tComment: " << doctorscomment <<endl;
 }
 
 BloodCount::BloodCount(){

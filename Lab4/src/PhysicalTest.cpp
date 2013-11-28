@@ -10,7 +10,7 @@
 
 using namespace std;
 
-std::ofstream output1("example.txt", std::ios_base::out|ios::app);
+std::ofstream output1("PatientReport.txt", std::ios_base::out|ios::app);
 PhysicalTest::PhysicalTest() {
 }
 
@@ -24,6 +24,16 @@ void PhysicalTest::annotation1(){
 	cout << "Comments:" << endl;
 	cin >> comment1;
 
+}
+
+void PhysicalTest::docannotation(){
+	string doctor1, doctorscomment1;
+
+	cout << "Please enter your name" <<endl;
+	cin >> doctor1;
+	cout << "Please enter your comment:" <<endl;
+	cin >> doctorscomment1;
+	output1 << "Name: " <<doctor1 <<"\t\t\tComment: " << doctorscomment1 <<endl;
 }
 
 VitalSigns::VitalSigns(){
@@ -130,10 +140,11 @@ cout << "Abnormal" <<endl;
 pHvaluedisplay = "ABNORMAL";
 }
 
+cout << "For the following tests, please enter N/n if test is negative, and P/p if test is positive." <<endl;
 cout << "Enter the protein result:" << endl;
 cin >> Protein;
 
-if (Protein == "Negative"){
+if (Protein == "N" || Protein == "n"){
 cout << "Normal"<<endl;
 Proteindisplay = "NORMAL";
 }
@@ -142,11 +153,10 @@ cout << "Abnormal"<<endl;
 Proteindisplay = "ABNORMAL";
 }
 
-
 cout << "Enter the sugar result:" << endl;
 cin >> Sugar;
 
-if (Sugar == "Negative"){
+if (Sugar == "N" || Sugar == "n"){
 cout << "Normal"<<endl;
 Sugardisplay ="NORMAL";
 }
@@ -157,7 +167,7 @@ Sugardisplay ="ABNORMAL";
 cout << "Enter the nitrite result:" << endl;
 cin >> Nitrite;
 
-if (Nitrite == "Negative"){
+if (Nitrite == "N" || Nitrite == "n"){
 cout << "Normal"<<endl;
 Nitritedisplay ="NORMAL";
 }
@@ -169,7 +179,7 @@ Nitritedisplay ="ABNORMAL";
 cout << "Enter the ketone result:" << endl;
 cin >> Ketone;
 
-if (Ketone == "Negative"){
+if (Ketone == "N" || Ketone == "n"){
 cout << "Normal"<<endl;
 Ketonedisplay = "NORMAL";
 }
@@ -181,7 +191,7 @@ Ketonedisplay = "ABNORMAL";
 cout << "Enter the bilirubin result:" << endl;
 cin >> Bilirubin;
 
-if (Bilirubin == "Negative"){
+if (Bilirubin == "Negative" || Bilirubin == "n"){
 cout << "Normal"<<endl;
 Bilirubindisplay = "NORMAL";
 }
@@ -192,7 +202,7 @@ Bilirubindisplay = "ABNORMAL";
 cout << "Enter the urobilinogen result:" << endl;
 cin >> Urobilinogen;
 
-if (Urobilinogen == "Negative"){
+if (Urobilinogen == "N" || Urobilinogen == "n"){
 cout << "Normal"<<endl;
 Urobilinogendisplay = "NORMAL";
 }
@@ -204,7 +214,7 @@ Urobilinogendisplay = "ABNORMAL";
 cout << "Enter the red blood cells result:" << endl;
 cin >> RedBloodCells;
 
-if (RedBloodCells == "Negative"){
+if (RedBloodCells == "N" || RedBloodCells == "n"){
 cout << "Normal"<<endl;
 RBCdisplay = "NORMAL";
 }
@@ -216,9 +226,7 @@ RBCdisplay = "ABNORMAL";
 cout << "Enter the white blood cells result:" << endl;
 cin >> WhiteBloodCells;
 
-
-
-if (WhiteBloodCells == "Negative"){
+if (WhiteBloodCells == "N" || WhiteBloodCells == "n"){
 cout << "Normal"<<endl;
 WBCdiplay = "NORMAL";
 }
@@ -233,22 +241,19 @@ void UrineCulture::cultureResults(){
 cout << "Enter the size:" << endl;
 cin >> size;
 
-
 cout << "Enter the color:" << endl;
 cin >> color;
-
 
 cout << "Enter the form:" << endl;
 cin >> form;
 
-
-cout << "Enter the result:"<< endl;
+cout << "Please enter N/n if result is normal, and A/a if result is abnormal:"<< endl;
 cin >> result;
-if (result == "Normal"){
+if (result == "N" || result == "n"){
 cout << "Normal"<<endl;
 resultdisplay = "NORMAL";
 }
-else{
+else if (result == "A" || result == "a"){
 cout << "Abnormal" <<endl;
 resultdisplay = "ABNORMAL";
 }
