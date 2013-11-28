@@ -1,0 +1,34 @@
+Patient's name: Rathai		Blood Type: A
+----------------BLOOD GLUCOSE TEST RESULTS----------------
+Blood Glucose Level		Condition
+80				Normal
+----------------------------------------------------------
+Hospital Member:Yiyi
+ID:54321
+Comment:HEY!!
+--------------------------------------------------------
+------------------URINE TEST RESULTS-------------------
+Urine Component		Value		Condition
+pH			8		NORMAL
+Protein			Negative	NORMAL
+Sugar			Negative	NORMAL
+Nitrite			Negative	NORMAL
+Ketone			Negative	NORMAL
+Bilirubin		Negative	NORMAL
+Urobilinogen		Negative	NORMAL
+RedBloodCells		Negative	NORMAL
+WhiteBloodCells		Negative	NORMAL
+--------------------------------------------------------
+Hospital Member:Bhavin
+ID:09876
+Comment:lalalala!
+--------------------------------------------------------
+Patient's name: Yiyi		Blood Type: B
+----------------BLOOD GLUCOSE TEST RESULTS----------------
+Blood Glucose Level		Condition
+80				Normal
+----------------------------------------------------------
+Hospital Member:Rathai
+ID:12345
+Comment:hey
+--------------------------------------------------------

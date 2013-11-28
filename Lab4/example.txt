@@ -1,0 +1,35 @@
+Patient's name: gjg		Blood Type: bnm
+----------------BLOOD GLUCOSE TEST RESULTS----------------
+Blood Glucose Level		Condition
+80				Normal
+----------------------------------------------------------
+Hospital Member:ghfdg
+ID:dfg
+Comment:dfhfg
+--------------------------------------------------------
+----------------BLOOD GLUCOSE TEST RESULTS----------------
+Blood Glucose Level		Condition
+90				Normal
+----------------------------------------------------------
+Hospital Member:fgf
+ID:ghg
+Comment:gfgh
+--------------------------------------------------------
+--------------------- LIPOPROTEIN TEST RESULTS ---------------------
+Lipoprotein		Value		Condition
+Total Cholesterol	127391		HIGH
+HDL			1.92874e+08		GOOD CONDITION
+LDL			1.28974e+06		VERY HIGH
+---------------------------------------------- ---------------------
+Hospital Member:hdkad
+ID:askdhak
+Comment:hdkashdaka
+--------------------------------------------------------
+----------------BLOOD GLUCOSE TEST RESULTS----------------
+Blood Glucose Level		Condition
+77				Normal
+----------------------------------------------------------
+Hospital Member:khda
+ID:akljda
+Comment:sadhka
+--------------------------------------------------------
