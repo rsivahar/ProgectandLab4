@@ -12,10 +12,13 @@
 
 using namespace std;
 
-std::ofstream output("PatientReport.txt", std::ios_base::out|ios::app);
+std::ofstream output("PatientReport.txt", std::ios_base::out|ios::app); //This allows certain functions to output the results to a text document. 
+
+//Constructor of base class
 BloodTest::BloodTest() {
 }
 
+//This function, from the base class, asks the user (suspected to be a nurse) to enter their details.  
 void BloodTest::annotation(){
 	cout << "Hospital Member:" << endl;
 	cin >> member;
@@ -28,6 +31,7 @@ void BloodTest::annotation(){
 
 }
 
+//This fucntion, from the base class, asks the doctor to enter their details into the system. 
 void BloodTest::doctorsannotation(){
 	string doctor, doctorscomment;
 
@@ -38,6 +42,7 @@ void BloodTest::doctorsannotation(){
 	output << "Name: " <<doctor <<"\t\t\tComment: " << doctorscomment <<endl;
 }
 
+//This is the constructor for the BloodCount class
 BloodCount::BloodCount(){
 	redbloodcells = 0;
 	whitebloodcells = 0;
@@ -47,6 +52,8 @@ BloodCount::BloodCount(){
 	volume=0;
 }
 
+//This is a function from the BloodCount class, that asks the user to input the results from a blood count test. 
+//It then checks whether the result entered is normal or not, and displays the outcome. 
 void BloodCount::bloodTestResults(){
 
 cout <<"Enter the gender of the patient:" <<endl;
@@ -166,6 +173,7 @@ else {
 }
 }
 
+//This function is from the BloodCount class and displays the results as a organized chart when the user wants to generate a report of the results.
 void BloodCount::bloodCountDisplay(){
 	output << "---------------BLOOD COUNT TEST RESULTS---------------"<<endl;
 	output << "Blood Component\t\tValue\t\t\tCondition" <<endl;
@@ -182,10 +190,13 @@ void BloodCount::bloodCountDisplay(){
 
 }
 
+//This is the constructor for the BloodGlucose class. 
 BloodGlucose::BloodGlucose(){
 results =0;
 }
 
+//This function in the BloodGlucose class asks the user to enter the results from a blood glucose test.
+//It then displays the condition of the entered amount to the user. 
 string BloodGlucose::bloodGlucoseResults(){
 cout << "Please enter the blood glucose results:" <<endl;
 cin >> results;
@@ -211,6 +222,7 @@ cout <<condition <<endl;
 return condition;
 }
 
+//This function displays the results of the function above in an organized chart when the user wants to generate a report of the results.
 void BloodGlucose::bloodGlucoseDisplay(){
 	output << "----------------BLOOD GLUCOSE TEST RESULTS----------------"<<endl;
 	output <<"Blood Glucose Level\t\tCondition" <<endl;
@@ -222,12 +234,15 @@ void BloodGlucose::bloodGlucoseDisplay(){
 	output << "--------------------------------------------------------"<<endl;
 }
 
+//This is the constructor for the Lipoprotein class. 
 Lipoprotein::Lipoprotein(){
 	totalCholesterol = 0;
 	hdl = 0;
 	ldl = 0;
 }
 
+//This is a function from the Lipoprotein class, that asks the user to input the results from a blood lipoprotein test. 
+//It then checks whether the result entered is normal or not, and displays the outcome. 
 void Lipoprotein::lipoproteinResults(){
 
 cout << "Please enter the total cholesterol level acquired from the test:" <<endl;
@@ -287,6 +302,7 @@ if (ldl>=190){
 }
 }
 
+//This function displays the results entered in a liprotein test in an organized chart when the user wants to generate a report of the results. 
 void Lipoprotein::lipoproteinDisplay(){
 	output << "--------------------- LIPOPROTEIN TEST RESULTS ---------------------" <<endl;
 	output << "Lipoprotein\t\tValue\t\tCondition" <<endl;
