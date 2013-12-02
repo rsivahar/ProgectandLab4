@@ -6,6 +6,9 @@
 // Description : Hello World in C++, Ansi-style
 //============================================================================
 
+
+//THIS IS A SAMPLE OF HOW THE CHART SYSTEM CAN BE STRUCTURED. ONLY NURSES ARE ALLOWED TO ENTER TEST RESULTS AND GENERATE THE REPORT.
+//DOCTORS CAN ONLY ADD AN ANNOTATION AFTER REVIEWING A RESULT. 
 #include <iostream>
 #include "BloodTest.hpp"
 #include "PhysicalTest.hpp"
